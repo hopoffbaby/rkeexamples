@@ -9,15 +9,15 @@ nodes:
   - worker
   - etcd
   hostname_override: ""
-  user: root
+  user: neil
   docker_socket: /var/run/docker.sock
   ssh_key: ""
-  ssh_key_path: ~/.ssh/id_rsa
+  ssh_key_path: C:\Users\Neil\Documents\MobaXterm\home\.ssh\id_rsa
   ssh_cert: ""
   ssh_cert_path: ""
   labels: {}
   taints: []
-- address: 192.168.0.198
+- address: 192.168.0.163
   port: "22"
   internal_address: ""
   role:
@@ -25,15 +25,15 @@ nodes:
   - worker
   - etcd
   hostname_override: ""
-  user: root
+  user: neil
   docker_socket: /var/run/docker.sock
   ssh_key: ""
-  ssh_key_path: ~/.ssh/id_rsa
+  ssh_key_path: C:\Users\Neil\Documents\MobaXterm\home\.ssh\id_rsa
   ssh_cert: ""
   ssh_cert_path: ""
   labels: {}
   taints: []
-- address: 192.168.0.225
+- address: 192.168.0.199
   port: "22"
   internal_address: ""
   role:
@@ -41,10 +41,10 @@ nodes:
   - worker
   - etcd
   hostname_override: ""
-  user: root
+  user: neil
   docker_socket: /var/run/docker.sock
   ssh_key: ""
-  ssh_key_path: ~/.ssh/id_rsa
+  ssh_key_path: C:\Users\Neil\Documents\MobaXterm\home\.ssh\id_rsa
   ssh_cert: ""
   ssh_cert_path: ""
   labels: {}
@@ -113,7 +113,9 @@ network:
   node_selector: {}
 authentication:
   strategy: x509
-  sans: []
+  sans:
+    - "192.168.0.99"
+    - "rancher.lan"
   webhook: null
 addons: ""
 addons_include: []
@@ -171,7 +173,7 @@ cluster_name: ""
 cloud_provider:
   name: ""
 prefix_path: ""
-addon_job_timeout: 0
+addon_job_timeout: 60
 bastion_host:
   address: ""
   port: ""
